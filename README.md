@@ -60,7 +60,9 @@ Output:
 ![image](https://user-images.githubusercontent.com/72430475/104427420-1132bf00-5538-11eb-8ad5-253431eb0782.png)
 
 Program 3.Develop a program to find the sum and mean of a set of images.Create n number of images and read from the directory and perform the operations.
-
+Mean:mean value gives the contributions of individual pixel intensity for the entire image.
+sum:adds the value of each pixel in one of the input iamges with the corrresponding pixel.
+in the other input image and returns the sum in the corresponding pixel of the output image.
 import cv2
 import os
 path = "D:\imp_for_ip"
@@ -89,10 +91,14 @@ print(mean)
 cv2.waitKey()
 cv2.destroyAllwindows()
 
+Output:
+![image](https://user-images.githubusercontent.com/72430475/104433318-d2ecce00-553e-11eb-8231-abcc2eade4fc.png)
 
 
 Program 4.Write a program to convert color image into gray scale and binary image.
-
+A method called threshold() is used to convert grayscale images to binary image.
+Binary image:Binary image is the type of image where each pixel is black or white/0 or 1.Here 0 represents black and 1 represents white pixel.
+Grayscale image:Grayscale is a range of monochromatic shades from black to white.
 import cv2
 img = cv2.imread("cat.jpg")
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -109,6 +115,7 @@ Output:
 ![image](https://user-images.githubusercontent.com/72430475/104431731-15ada680-553d-11eb-983e-7cc8f27ae326.png)
 
 Program 5.Write a program to convert color image into different color space.
+
 import cv2
 img = cv2.imread("cat.jpg")
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
