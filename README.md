@@ -115,7 +115,7 @@ Output:
 ![image](https://user-images.githubusercontent.com/72430475/104431731-15ada680-553d-11eb-983e-7cc8f27ae326.png)
 
 Program 5.Write a program to convert color image into different color space.
-
+Color spaces are a way to represent the color channels present in the image that gives the image that particular hue.There are several different color spaces and each has its own significance.
 import cv2
 img = cv2.imread("cat.jpg")
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -137,14 +137,15 @@ Output:
 ![image](https://user-images.githubusercontent.com/72430475/104432346-c9169b00-553d-11eb-845c-3b2f0fe0ceca.png)
 
 Program 6.Develop a program to create an image from 2D array.
-
+Python Imaging Library (PIL) (in newer versions known as Pillow) is a free and open-source additional library for the Python programming language that adds support for opening, manipulating, and saving many different image file formats. It is available for Windows, Mac OS X and Linux.
+NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices.
+The numpy.zeros() function returns a new array of given shape and type, with zeros.
 import numpy as np
 from PIL import Image
 import cv2 as c 
 array = np.zeros([100, 200, 3], dtype=np.uint8)
 array[:,:100] = [150, 128, 0] #Orange left side
 array[:,100:] = [0, 0, 255]   #Blue right side
-
 img = Image.fromarray(array)
 img.save('img1.png')
 img.show()
@@ -152,5 +153,76 @@ c.waitKey(0)
 
 Output:
 ![image](https://user-images.githubusercontent.com/72430475/104432656-1430ae00-553e-11eb-8c2d-be454cafefcf.png)
+
+Program 7:Find the neighborhood values of the matrix.
+
+import numpy as np
+ini_array = np.array([[1, 2, 3], [45, 4, 7], [9, 6, 10]])
+print("initial_array : ", str(ini_array));
+column_to_be_added = np.array([1, 2, 3])
+result = np.hstack((ini_array, np.atleast_2d(column_to_be_added).T))
+print ("resultant array", str(result))
+def neighbors(radius, rowNumber, columnNumber):
+return [[ini_array[i][j]
+if  i >= 0 and i < len(ini_array) and j >= 0 and j < len(ini_array[0]) else 0
+for j in range(columnNumber-1-radius, columnNumber+radius)]
+for i in range(rowNumber-1-radius, rowNumber+radius)]
+neighbors(2, 2, 2)
+
+Output:
+initial_array :  [[ 1  2  3]
+[45  4  7]
+[ 9  6 10]]
+resultant array [[ 1  2  3  1]
+[45  4  7  2]
+[ 9  6 10  3]]
+Out[2]:
+[[0, 0, 0, 0, 0],
+[0, 1, 2, 3, 0],
+[0, 45, 4, 7, 0],
+[0, 9, 6, 10, 0],
+[0, 0, 0, 0, 0]]
+
+Program 8: Find the sum of the neighborhood values of the matrix. 
+import numpy as np
+
+   M = [[1, 2, 3],
+     [4, 5, 6],
+    [7, 8, 9]] 
+
+M = np.asarray(M)
+N = np.zeros(M.shape)
+def sumNeighbors(M,x,y):
+    l = []
+    for i in range(max(0,x-1),x+2): 
+            try:
+                t = M[i][j]
+                l.append(t)
+            except IndexError: 
+                pass
+    return sum(l)-M[x][y]
+
+for i in range(M.shape[0]):
+    for j in range(M.shape[1]):
+        N[i][j] = sumNeighbors(M, i, j)
+
+print ("Original matrix:\n", M)
+print ("Summed neighbors matrix:\n", N)
+
+
+
+Output:
+Original matrix:
+ [[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+Summed neighbors matrix:
+ [[11. 19. 13.]
+ [23. 40. 27.]
+ [17. 31. 19.]]
+
+
+
+
 
 
