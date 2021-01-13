@@ -74,5 +74,24 @@ cv2.destroyAllWindows()
 
 Output:
 ![image](https://user-images.githubusercontent.com/72430475/104431592-e9922580-553c-11eb-8070-9e6160d0ace0.png)
+![image](https://user-images.githubusercontent.com/72430475/104431731-15ada680-553d-11eb-983e-7cc8f27ae326.png)
+
+Program 5.Write a program to convert color image into different color space.
+import cv2
+img = cv2.imread("cat.jpg")
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+lab=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)
+cv2.imshow("GRAY image",gray)
+cv2.waitKey(0)
+cv2.imshow("HSV image",hsv)
+cv2.waitKey(0)
+cv2.imshow("LAB image",lab)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+cv2.destroyAllWindows()
+
+Output:
 
 
