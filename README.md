@@ -59,6 +59,38 @@ cv2.waitKey(0)
 Output:
 ![image](https://user-images.githubusercontent.com/72430475/104427420-1132bf00-5538-11eb-8ad5-253431eb0782.png)
 
+Program 3.Develop a program to find the sum and mean of a set of images.Create n number of images and read from the directory and perform the operations.
+
+import cv2
+import os
+path = "D:\imp_for_ip"
+imgs=[]
+dirs=os.listdir(path)
+
+for file in dirs:
+    fpat=path+"\\"+file
+    imgs.append(cv2.imread(fpat))
+    
+i=0
+sum_img=[]
+for sum_img in imgs:
+    read_imgs=imgs[i]
+    sum_img=sum_img+read_imgs
+    #cv2.imshow(dirs[i],imgs[i])
+    i=i+1
+print(i)
+cv2.imshow('sum',sum_img)
+print(sum_img)
+
+cv2.imshow('mean',sum_img/i)
+mean=(sum_img/i)
+print(mean)
+
+cv2.waitKey()
+cv2.destroyAllwindows()
+
+
+
 Program 4.Write a program to convert color image into gray scale and binary image.
 
 import cv2
@@ -112,5 +144,6 @@ img.show()
 c.waitKey(0)
 
 Output:
+![image](https://user-images.githubusercontent.com/72430475/104432656-1430ae00-553e-11eb-8c2d-be454cafefcf.png)
 
 
