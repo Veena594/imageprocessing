@@ -22,6 +22,7 @@ Program 2.Develop a program to perform linear transformation on image.
 Linear transformation is a type of gray level transformation that is used for image enhancement.
 It is a spatial domain method.
 It is used for manipulation of an image so that result is more suitable than original for a specific appliaction.
+Image 
 import cv2
 import numpy as np
 FILE_NAME = 'ip images1.png'
