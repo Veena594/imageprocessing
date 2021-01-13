@@ -154,36 +154,8 @@ c.waitKey(0)
 Output:
 ![image](https://user-images.githubusercontent.com/72430475/104432656-1430ae00-553e-11eb-8c2d-be454cafefcf.png)
 
-Program 7:Find the neighborhood values of the matrix.
 
-import numpy as np
-ini_array = np.array([[1, 2, 3], [45, 4, 7], [9, 6, 10]])
-print("initial_array : ", str(ini_array));
-column_to_be_added = np.array([1, 2, 3])
-result = np.hstack((ini_array, np.atleast_2d(column_to_be_added).T))
-print ("resultant array", str(result))
-def neighbors(radius, rowNumber, columnNumber):
-return [[ini_array[i][j]
-if  i >= 0 and i < len(ini_array) and j >= 0 and j < len(ini_array[0]) else 0
-for j in range(columnNumber-1-radius, columnNumber+radius)]
-for i in range(rowNumber-1-radius, rowNumber+radius)]
-neighbors(2, 2, 2)
-
-Output:
-initial_array :  [[ 1  2  3]
-[45  4  7]
-[ 9  6 10]]
-resultant array [[ 1  2  3  1]
-[45  4  7  2]
-[ 9  6 10  3]]
-Out[2]:
-[[0, 0, 0, 0, 0],
-[0, 1, 2, 3, 0],
-[0, 45, 4, 7, 0],
-[0, 9, 6, 10, 0],
-[0, 0, 0, 0, 0]]
-
-Program 8: Find the sum of the neighborhood values of the matrix. 
+Program 7: Find the sum of the neighborhood values of the matrix. 
 import numpy as np
 
    M = [[1, 2, 3],
