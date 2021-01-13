@@ -22,7 +22,8 @@ Program 2.Develop a program to perform linear transformation on image.
 Linear transformation is a type of gray level transformation that is used for image enhancement.
 It is a spatial domain method.
 It is used for manipulation of an image so that result is more suitable than original for a specific appliaction.
-Image 
+Image scaling is the process of resizing a digital image.
+Image rotation is a common image processing routine with applications in matching, alignment, and other image-based algorithms.
 import cv2
 import numpy as np
 FILE_NAME = 'ip images1.png'
@@ -58,5 +59,19 @@ cv2.waitKey(0)
 Output:
 ![image](https://user-images.githubusercontent.com/72430475/104427420-1132bf00-5538-11eb-8ad5-253431eb0782.png)
 
+Program 4.Write a program to convert color image into gray scale and binary image.
+
+import cv2
+img = cv2.imread("cat.jpg")
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+cv2.imshow("Binary Image",gray)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+cv2.imshow("Binary Image",bw_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+Output:
 
 
